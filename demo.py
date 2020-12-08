@@ -24,6 +24,10 @@ class SimpleAndroidTests(unittest.TestCase):
         desired_caps['appActivity'] = 'com.tencent.mm.ui.LauncherUI'
         # 如果有 apk 包，可以代替 app 的配置参数，直接通过 apk 读取信息。
         # desired_caps['app'] = get_path('your.apk')
+        # 部分 APP 进去后会马上切换 Activity 所以需要设置这个值用 adb shell dumpsys window windows 找到特定的 Activity
+        # desired_caps['appWaitActivity'] = ''
+        # desired_caps['appWaitPackage'] = ''
+        # desired_caps['appWaitDuration'] = ''
 
         self.driver = webdriver.Remote(
             'http://localhost:4723/wd/hub', desired_caps)
