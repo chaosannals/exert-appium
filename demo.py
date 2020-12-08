@@ -34,6 +34,10 @@ class SimpleAndroidTests(unittest.TestCase):
     def test_simple_actions(self):
         '''
         '''
+        el = WebDriverWait(self.driver, 20).until(
+            lambda x: x.find_element_by_xpath('''//android.widget.FrameLayout[@content-desc="当前所在页面,与的聊天"]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.RelativeLayout[4]''')
+        )
+        el.click()
 
 
 if __name__ == '__main__':
